@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48b71c8f-f70b-4cf2-afc8-f0e8569c2880" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-    </list>
+    <list default="true" id="48b71c8f-f70b-4cf2-afc8-f0e8569c2880" name="Default Changelist" comment="create-react-app" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +40,14 @@
       <workItem from="1616273904106" duration="1037000" />
       <workItem from="1616351295037" duration="968000" />
     </task>
+    <task id="LOCAL-00001" summary="create-react-app">
+      <created>1616353570533</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616353570533</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -58,5 +64,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create-react-app" />
+    <option name="LAST_COMMIT_MESSAGE" value="create-react-app" />
   </component>
 </project>
