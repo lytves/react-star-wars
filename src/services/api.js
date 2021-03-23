@@ -30,8 +30,8 @@ const getApiResource = async (url) => {
 //      .then(o => console.log(o))
 
 // way 2 async-await
-(async () => {
-    const characters = await getApiResource(SWAPI_ROOT + SWAPI_CHARACTERS)
-    console.warn(characters);
-})()
-
+// (async () => {
+//     const characters = await getApiResource(SWAPI_ROOT + SWAPI_CHARACTERS)
+//     console.warn(characters);
+// })()
+//
