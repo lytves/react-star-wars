@@ -1,10 +1,11 @@
-import styles from './App.module.css';
+import styles from './App.module.css'
 import cn from 'classnames'
+import CharactersPage from '../CharactersPage'
 
 const App = () => {
   return (
-      <h1 className={cn(styles.header)}>Hello, React World!</h1>
+      <CharactersPage />
   )
 }
 
-export default App;
+export default App

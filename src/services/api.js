@@ -1,6 +1,3 @@
-const SWAPI_ROOT = 'https://swapi.dev/api/'
-const SWAPI_CHARACTERS = 'people'
-
 // way 1: Promises
 // const getApiResource = (url) => {
 //     fetch(url)
@@ -12,7 +9,7 @@ const SWAPI_CHARACTERS = 'people'
 // }
 
 // way 2 async-await
-const getApiResource = async (url) => {
+export const getApiResource = async (url) => {
     try {
         const res = await fetch(url)
         if (!res.ok) {
@@ -30,8 +27,8 @@ const getApiResource = async (url) => {
 //      .then(o => console.log(o))
 
 // way 2 async-await
-(async () => {
-    const characters = await getApiResource(SWAPI_ROOT + SWAPI_CHARACTERS)
-    console.warn(characters);
-})()
-
+// (async () => {
+//     const characters = await getApiResource(SWAPI_ROOT + SWAPI_CHARACTERS)
+//     console.warn(characters);
+// })()
+//
