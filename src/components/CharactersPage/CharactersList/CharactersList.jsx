@@ -1,19 +1,21 @@
 import styles from './CharactersList.module.css'
 
-const CharactersList = ({ characters }) => {
+const CharactersList = ({characters}) => {
 
     return (
-        <ul>
+        <ul className={styles.list__container}>
             {
                 characters.map(({id, name, img}) =>
-                    <li key={id}>
-                        <img src={img} alt={name}/>
+                    <li className={styles.list_item} key={id}>
+                        <a href="#">
+                        <img className={styles.character__photo} src={img} alt={name}/>
                         <p>{name}</p>
-                    </li>
+                    </a>
+                </li>
+                )
+                }
+                </ul>
                 )
             }
-        </ul>
-    )
-}
 
-export default CharactersList
+            export default CharactersList
