@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import styles from './CharactersPage.module.css'
 import {getApiCharacters} from '../../services/services'
 import {getCharacterId, getCharacterImage} from '../../utils/getCharacterData'
+import CharactersList from '../../components/CharactersPage/CharactersList'
 
 const CharactersPage = () => {
 
@@ -27,18 +28,7 @@ const CharactersPage = () => {
 
     return (
         <>
-            {characters && (
-                <ul>
-                    {
-                        characters.map(({id, name, img}) =>
-                            <li key={id}>
-                                <img src={img} alt={name} />
-                                <p>{name}</p>
-                            </li>
-                        )
-                    }
-                </ul>
-            )}
+            {characters && <CharactersList characters={characters} />}
         </>
     )
 }
