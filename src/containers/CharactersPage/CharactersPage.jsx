@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 import styles from './CharactersPage.module.css'
-import { getApiCharacters } from '../../services/services'
+import {getApiCharacters} from '../../services/services'
+import {getCharacterId, getCharacterImage} from '../../utils/getCharacterData'
 
 const CharactersPage = () => {
 
@@ -8,7 +9,15 @@ const CharactersPage = () => {
 
     const getCharacters = async () => {
         const res = await getApiCharacters()
-        const charactersList = res.results.map(({name, url}) => ({name, url}))
+        const charactersList = res.results.map(({name, url}) => {
+            const id = getCharacterId(url)
+            const img = getCharacterImage(id)
+            return {
+                id,
+                name,
+                img
+            }
+        })
         setCharacters(charactersList)
     }
 
@@ -21,8 +30,11 @@ const CharactersPage = () => {
             {characters && (
                 <ul>
                     {
-                        characters.map(({name, url}) =>
-                            <li key={name}>{name}</li>
+                        characters.map(({id, name, img}) =>
+                            <li key={id}>
+                                <img src={img} alt={name} />
+                                <p>{name}</p>
+                            </li>
                         )
                     }
                 </ul>

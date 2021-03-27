@@ -12,3 +12,4 @@ npm start
 ### Used libraries / stuff:
 + [Classnames](https://github.com/JedWatson/classnames)
 + [Swapi](https://swapi.dev)
++ [Star Wars: A Visual Guide](https://starwars-visualguide.com/#/)
