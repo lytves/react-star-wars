@@ -3,12 +3,10 @@ import styles from './CharactersPage.module.css'
 import {getApiCharacters} from '../../services/services'
 import {getCharacterId, getCharacterImage} from '../../utils/getCharacterData'
 import CharactersList from '../../components/CharactersPage/CharactersList'
+import {withApiError} from '../../hoc-helper/withApiError'
 
-const CharactersPage = () => {
-
+const CharactersPage = ({setApiError}) => {
     const [characters, setCharacters] = useState(null)
-    const [apiError, setApiError] = useState(false)
-
     const getCharacters = async () => {
         try {
             const res = await getApiCharacters()
@@ -34,16 +32,12 @@ const CharactersPage = () => {
 
     return (
         <>
-            {apiError
-                ? <h2>Error</h2>
-                : (
-                    <>
-                        {characters && <CharactersList characters={characters}/>}
-                    </>
-                )
+            <h1>Navigation</h1>
+            {
+                characters && <CharactersList characters={characters} />
             }
         </>
     )
 }
 
-export default CharactersPage
+export default withApiError(CharactersPage)
