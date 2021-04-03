@@ -8,14 +8,14 @@ const CharactersList = ({characters}) => {
                 characters.map(({id, name, img}) =>
                     <li className={styles.list_item} key={id}>
                         <a href="#">
-                        <img className={styles.character__photo} src={img} alt={name}/>
-                        <p>{name}</p>
-                    </a>
-                </li>
-                )
-                }
-                </ul>
+                            <img className={styles.character__photo} src={img} alt={name}/>
+                            <p>{name}</p>
+                        </a>
+                    </li>
                 )
             }
+        </ul>
+    )
+}
 
-            export default CharactersList
+export default CharactersList

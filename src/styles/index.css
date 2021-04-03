@@ -1,9 +1,11 @@
 :root {
     --font-family-name: "Droid Sans";
+    --font-header-size: 2rem;
 
     --color-white: #fff;
     --color-black: #000;
     --color-dark-gray: #10100e;
+    --color-yellow: #FFFF00;
 
     --border-radius-small: 10px;
 
