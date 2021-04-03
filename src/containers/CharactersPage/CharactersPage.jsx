@@ -7,19 +7,25 @@ import CharactersList from '../../components/CharactersPage/CharactersList'
 const CharactersPage = () => {
 
     const [characters, setCharacters] = useState(null)
+    const [apiError, setApiError] = useState(false)
 
     const getCharacters = async () => {
-        const res = await getApiCharacters()
-        const charactersList = res.results.map(({name, url}) => {
-            const id = getCharacterId(url)
-            const img = getCharacterImage(id)
-            return {
-                id,
-                name,
-                img
-            }
-        })
-        setCharacters(charactersList)
+        try {
+            const res = await getApiCharacters()
+            const charactersList = res.results.map(({name, url}) => {
+                const id = getCharacterId(url)
+                const img = getCharacterImage(id)
+                return {
+                    id,
+                    name,
+                    img
+                }
+            })
+            setCharacters(charactersList)
+            setApiError(false)
+        } catch (er) {
+            setApiError(true)
+        }
     }
 
     useEffect(() => {
@@ -28,7 +34,14 @@ const CharactersPage = () => {
 
     return (
         <>
-            {characters && <CharactersList characters={characters} />}
+            {apiError
+                ? <h2>Error</h2>
+                : (
+                    <>
+                        {characters && <CharactersList characters={characters}/>}
+                    </>
+                )
+            }
         </>
     )
 }
