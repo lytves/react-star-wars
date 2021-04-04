@@ -1,4 +1,5 @@
 import styles from './CharactersList.module.css'
+import PropTypes from 'prop-types'
 
 const CharactersList = ({characters}) => {
 
@@ -16,6 +17,10 @@ const CharactersList = ({characters}) => {
             }
         </ul>
     )
+}
+
+CharactersList.propTypes = {
+    characters: PropTypes.array
 }
 
 export default CharactersList

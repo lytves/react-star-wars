@@ -14,7 +14,7 @@ npm start
     + [Classnames](https://github.com/JedWatson/classnames)
     + [React-app-rewired](https://github.com/timarney/react-app-rewired)
     + [React-app-rewire-alias](https://github.com/oklas/react-app-rewire-alias)
-
+    + [Prop-types](https://github.com/facebook/prop-types)
 * #### Content, API 🚁
     + [Swapi](https://swapi.dev)
     + [Star Wars: A Visual Guide](https://starwars-visualguide.com/#/)

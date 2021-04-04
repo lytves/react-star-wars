@@ -4,6 +4,7 @@ import {getApiCharacters} from '@services/services'
 import {getCharacterId, getCharacterImage} from '@utils/getCharacterData'
 import CharactersList from '@components/CharactersPage/CharactersList'
 import {withApiError} from '@hoc-helpers/withApiError'
+import PropTypes from 'prop-types'
 
 const CharactersPage = ({setApiError}) => {
     const [characters, setCharacters] = useState(null)
@@ -38,6 +39,10 @@ const CharactersPage = ({setApiError}) => {
             }
         </>
     )
+}
+
+CharactersPage.propTypes = {
+    setApiError: PropTypes.func
 }
 
 export default withApiError(CharactersPage)
