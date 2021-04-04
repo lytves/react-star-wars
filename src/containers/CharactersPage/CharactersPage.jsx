@@ -1,10 +1,12 @@
 import {useEffect, useState} from 'react'
-import styles from './CharactersPage.module.css'
+import PropTypes from 'prop-types'
+
+import {withApiError} from '@hoc-helpers/withApiError'
+import CharactersList from '@components/CharactersPage/CharactersList'
 import {getApiCharacters} from '@services/services'
 import {getCharacterId, getCharacterImage} from '@utils/getCharacterData'
-import CharactersList from '@components/CharactersPage/CharactersList'
-import {withApiError} from '@hoc-helpers/withApiError'
-import PropTypes from 'prop-types'
+
+import styles from './CharactersPage.module.css'
 
 const CharactersPage = ({setApiError}) => {
     const [characters, setCharacters] = useState(null)

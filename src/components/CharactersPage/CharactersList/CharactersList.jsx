@@ -1,5 +1,6 @@
-import styles from './CharactersList.module.css'
 import PropTypes from 'prop-types'
+
+import styles from './CharactersList.module.css'
 
 const CharactersList = ({characters}) => {
 
