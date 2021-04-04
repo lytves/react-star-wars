@@ -2,7 +2,7 @@ import {
     HTTP, SWAPI_ROOT, SWAPI_CHARACTERS, API_CHARACTERS,
     GUIDE_CHARACTERS_IMG, GUIDE_IMG_EXTENSION
 }
-    from '../constants/api'
+    from '@constants/api'
 
 const getId = (urlStr, category) => {
 
