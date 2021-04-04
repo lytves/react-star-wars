@@ -1,7 +1,5 @@
-import {BrowserRouter, NavLink, Route} from 'react-router-dom'
-
-import CharactersPage from '@containers/CharactersPage'
-import HomePage from '@containers/HomePage'
+import {BrowserRouter, Switch, NavLink, Route} from 'react-router-dom'
+import routesConfig from '@routes/routesConfig'
 
 import styles from './App.module.css'
 import cn from 'classnames'
@@ -13,9 +11,16 @@ const App = () => {
                 <NavLink to="/" exact>Home</NavLink>
                 <NavLink to="/characters" exact>Characters</NavLink>
 
-                <Route path="/" exact component={HomePage}/>
-                <Route path="/characters" exact component={CharactersPage}/>
-
+                <Switch>
+                    {routesConfig.map((route, index) => (
+                        <Route
+                            key={index}
+                            path={route.path}
+                            exact={route.exact}
+                            component={route.component}
+                        />
+                    ))}
+                </Switch>
             </BrowserRouter>
         </>
     )
