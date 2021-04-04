@@ -1,15 +1,33 @@
 :root {
     --font-family-name: "Droid Sans";
     --font-header-size: 2rem;
+    --font-main-size: 16px;
+    --font-bold: 600;
+
+    --width-max: 1200px;
 
     --color-white: #fff;
     --color-black: #000;
     --color-dark-gray: #10100e;
     --color-yellow: #FFFF00;
+    --color-blue: #6a83fb;
+    --color-violet: #ae72c2;
 
-    --border-radius-small: 10px;
+    --border-radius-large: 10px;
+    --border-radius-small: 3px;
+
+    --text-shadow-yellow:
+            0 0 2px var(--color-white),
+            0 0 40px var(--color-blue);
+
 
     --margin-medium: 20px;
+    --margin-large: 30px;
+
+    --theme-default-header-color: #cccc46;
+    --theme-default-bgimage: url(@static/bg.jpg);
+
+    --transition: 0.4s;
 }
 
 body {
@@ -17,4 +35,22 @@ body {
     padding: 0;
     background-color: var(--color-dark-gray);
     font-family: var(--font-family-name);
+    font-size: var(--font-main-size);
+    background-image: var(--theme-default-bgimage);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: fixed;
+}
+
+img {
+    display: block;
+}
+
+.header__text {
+    line-height: 1.7;
+    font-size: var(--font-header-size);
+    text-shadow: 0 0 2px var(--color-black);
+    color: var(--theme-default-header-color);
+    transition: color var(--transition);
 }
