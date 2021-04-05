@@ -1,5 +1,6 @@
 import HomePage from '@containers/HomePage'
 import CharactersPage from '@containers/CharactersPage'
+import NotFoundPage from '@containers/NotFoundPage'
 
 const routesConfig = [
     {
@@ -10,6 +11,10 @@ const routesConfig = [
         path: '/characters',
         exact: true,
         component: CharactersPage
+    }, {
+        path: '*',
+        exact: false,
+        component: NotFoundPage
     }
 ]
 
