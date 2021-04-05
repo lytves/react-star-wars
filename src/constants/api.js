@@ -5,7 +5,8 @@ export const HTTP = 'http://'
 // swapi
 export const SWAPI_ROOT = 'swapi.dev/api/'
 export const SWAPI_CHARACTERS = 'people'
-export const API_CHARACTERS = HTTPS + SWAPI_ROOT + SWAPI_CHARACTERS
+export const SWAPI_PARAM_PAGE = '/?page='
+export const API_CHARACTERS = HTTPS + SWAPI_ROOT + SWAPI_CHARACTERS + SWAPI_PARAM_PAGE
 
 // visualguide
 const GUIDE_ROOT_IMG = 'https://starwars-visualguide.com/assets/img/'

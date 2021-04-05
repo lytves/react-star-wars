@@ -3,16 +3,26 @@ import PropTypes from 'prop-types'
 
 import {withApiError} from '@hoc-helpers/withApiError'
 import CharactersList from '@components/CharactersPage/CharactersList'
+import CharactersNavigation from '@components/CharactersPage/CharactersNavigation'
 import {getApiCharacters} from '@services/services'
+import {changeHttp} from '@services/api'
 import {getCharacterId, getCharacterImage} from '@utils/getCharacterData'
+import {useQueryParams} from "@hooks/useQueryParams";
 
 import styles from './CharactersPage.module.css'
 
 const CharactersPage = ({setApiError}) => {
     const [characters, setCharacters] = useState(null)
-    const getCharacters = async () => {
+    const [prevPage, setPrevPage] = useState(null)
+    const [nextPage, setNextPage] = useState(null)
+    const [currPage, setCurrPage] = useState(1)
+
+    const query = useQueryParams();
+    const queryPage = +query.get('page') || 1
+
+    const getCharacters = async (queryPage) => {
         try {
-            const res = await getApiCharacters()
+            const res = await getApiCharacters(queryPage)
             const charactersList = res.results.map(({name, url}) => {
                 const id = getCharacterId(url)
                 const img = getCharacterImage(id)
@@ -23,6 +33,11 @@ const CharactersPage = ({setApiError}) => {
                 }
             })
             setCharacters(charactersList)
+
+            setPrevPage(changeHttp(res.previous))
+            setNextPage(changeHttp(res.next))
+            setCurrPage(queryPage)
+
             setApiError(false)
         } catch (er) {
             setApiError(true)
@@ -30,12 +45,16 @@ const CharactersPage = ({setApiError}) => {
     }
 
     useEffect(() => {
-        getCharacters()
-    }, [])
+        getCharacters(queryPage)
+    }, [queryPage])
 
     return (
         <>
-            <h1 className="header__text">Navigation</h1>
+            <CharactersNavigation
+                prevPage={prevPage}
+                nextPage={nextPage}
+                currPage={currPage}
+            />
             {
                 characters && <CharactersList characters={characters} />
             }
