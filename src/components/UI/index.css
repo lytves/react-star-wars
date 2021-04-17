@@ -1,0 +1,11 @@
+:root {
+    --font-family-name: "sans-serif";
+    --font-bold: 600;
+    --font-size-small: 14px;
+
+    --transition: .4s;
+
+    --color-white: #fff;
+    --color-black: #000;
+    --color-grey: #9c9c9c;
+}

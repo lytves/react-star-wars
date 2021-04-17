@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import {Link} from "react-router-dom";
 
 import CharactersList from "../CharactersList";
+import UIButton from "@ui/UIButton";
 
 import styles from './CharactersNavigation.module.css'
 
@@ -16,32 +17,38 @@ const CharactersNavigation = ({
     let prevButton, nextButton
     if (prevPage) {
         prevButton =
-            <Link to={`/characters/?page=${prevPageNum}`} className={styles.link}>
-                <button className={styles.button}>Previous</button>
+            <Link to={`/characters/?page=${prevPageNum}`} className={styles.buttons}>
+                <UIButton
+                    text="Previous"
+                />
             </Link>
     } else {
         prevButton =
-            <button className={styles.button}
-                    disabled>
-                Previous
-            </button>
+            <UIButton
+                classes={styles.link}
+                text="Previous"
+                disabled={true}
+            />
     }
 
     if (nextPage) {
         nextButton =
-            <Link to={`/characters/?page=${nextPageNum}`} className={styles.link}>
-                <button className={styles.button}>Next</button>
+            <Link to={`/characters/?page=${nextPageNum}`} className={styles.buttons}>
+                <UIButton
+                    text="Next"
+                />
             </Link>
     } else {
         nextButton =
-            <button className={styles.button}
-                    disabled>
-                Previous
-            </button>
+            <UIButton
+                classes={styles.link}
+                text="Next"
+                disabled={true}
+            />
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             {prevButton}
             {nextButton}
         </div>

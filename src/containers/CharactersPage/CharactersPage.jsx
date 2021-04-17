@@ -18,7 +18,7 @@ const CharactersPage = ({setApiError}) => {
     const [currPage, setCurrPage] = useState(1)
 
     const query = useQueryParams();
-    const queryPage = +query.get('page') || 1
+    const queryPage = + query.get('page') || 1
 
     const getCharacters = async (queryPage) => {
         try {
