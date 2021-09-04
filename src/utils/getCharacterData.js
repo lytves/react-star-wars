@@ -3,13 +3,15 @@ import {
     GUIDE_CHARACTERS_IMG, GUIDE_IMG_EXTENSION
 }
     from '@constants/api'
+import {changeHttp} from "../services/api";
 
 const getId = (urlStr, category) => {
 
-    const id = urlStr
-        .replace(HTTP + SWAPI_ROOT + category, '')
+    const protocol = changeHttp(urlStr)
+
+    return urlStr
+        .replace(protocol + SWAPI_ROOT + category, '')
         .replace(/\//g, '')
-    return id
 }
 
 export const getCharacterId = (urlStr) => getId(urlStr, SWAPI_CHARACTERS)

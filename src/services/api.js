@@ -15,8 +15,15 @@ import * as url from "url";
  * @param {String} url income
  * @returns {String} url edited
  */
-export const changeHttp = (url) => {
+export const checkProtocol = (url) => {
     return url ? url.replace(HTTP, HTTPS) : url;
+}
+
+export const changeHttp = (url) => {
+    if (url && url.indexOf(HTTPS) !== -1) {
+        return HTTPS;
+    }
+    return HTTP;
 }
 
 /**
