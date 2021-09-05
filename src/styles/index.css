@@ -1,7 +1,9 @@
 :root {
     --font-family-name: "Droid Sans";
-    --font-header-size: 2rem;
+
     --font-main-size: 16px;
+    --font-subheader-size: 18px;
+    --font-header-size: 20px;
     --font-bold: 600;
 
     --width-max: 1200px;
@@ -13,8 +15,9 @@
     --color-blue: #6a83fb;
     --color-violet: #ae72c2;
 
-    --border-radius-large: 10px;
     --border-radius-small: 3px;
+    --border-radius-medium: 6px;
+    --border-radius-large: 10px;
 
     --text-shadow-yellow:
             0 0 2px var(--color-white),
@@ -23,6 +26,7 @@
             0 0 2px var(--color-white),
             0 0 40px var(--color-blue);
 
+    --margin-smaller: 5px;
     --margin-small: 10px;
     --margin-medium: 20px;
     --margin-large: 30px;

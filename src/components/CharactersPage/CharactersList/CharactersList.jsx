@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
 import styles from './CharactersList.module.css'
 
@@ -9,10 +10,10 @@ const CharactersList = ({characters}) => {
             {
                 characters.map(({id, name, img}) =>
                     <li className={styles.list_item} key={id}>
-                        <a href="#">
+                        <Link to={`/characters/${id}`}>
                             <img className={styles.character__photo} src={img} alt={name}/>
                             <p>{name}</p>
-                        </a>
+                        </Link>
                     </li>
                 )
             }

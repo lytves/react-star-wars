@@ -41,7 +41,7 @@ export const getApiResource = async (url) => {
         return await res.json()
     } catch (error) {
         console.error('Fetch failed:', error.message || error.status)
-        return false
+        throw 'getApiResource error'
     }
 }
 
