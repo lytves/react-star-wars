@@ -55,3 +55,10 @@ export const getApiResource = async (url) => {
 //     console.warn(characters);
 // })()
 //
+
+export const makeConcurrentRequest = async (urls) => {
+    const promisesRes = await Promise.all(urls.map(res => {
+        return fetch(res).then(res => res.json())
+    }));
+    return promisesRes
+}

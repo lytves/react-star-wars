@@ -6,11 +6,7 @@
 .person__name {
     color: var(--color-white);
     background-color: var(--color-name);
-    border-radius:
-            var(--border-radius-small)
-            var(--border-radius-small)
-            var(--border-radius-small)
-            0;
+    border-radius: var(--border-radius-small) var(--border-radius-small) var(--border-radius-small) 0;
     padding: var(--margin-small);
     font-size: var(--font-header-size);
     font-weight: var(--font-bold);
@@ -21,6 +17,5 @@
     flex-wrap: wrap;
     padding: var(--margin-medium);
     border-left: 5px solid var(--color-name);
-    border-radius:
-            var(--border-radius-small);
+    border-radius: var(--border-radius-small);
 }

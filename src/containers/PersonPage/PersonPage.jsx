@@ -7,6 +7,7 @@ import {getCharacterImage} from '@utils/getCharacterData'
 
 import PersonInfo from '@components/PersonPage/PersonInfo'
 import PersonImage from '@components/PersonPage/PersonImage'
+import PersonFilms from '@components/PersonPage/PersonFilms'
 import PersonLinkBack from '@components/PersonPage/PersonLinkBack'
 
 import styles from './PersonPage.module.css'
@@ -15,13 +16,14 @@ const PersonPage = ({match, setApiError}) => {
     const [personInfo, setPersonInfo] = useState(null)
     const [personName, setPersonName] = useState(null)
     const [personImage, setPersonImage] = useState(null)
+    const [personFilms, setPersonFilms] = useState(null)
 
     useEffect(() => {
             (async () => {
                 const id = match.params.id
                 try {
                     const res = await getApiPerson(id)
-                    console.log(res)
+
                     setPersonInfo([
                         {title: 'Height', data: res.height},
                         {title: 'Mass', data: res.mass},
@@ -33,11 +35,11 @@ const PersonPage = ({match, setApiError}) => {
                     ])
                     setPersonName(res.name)
                     setPersonImage(getCharacterImage(id))
-                    // res.films
-                    console.log(personInfo)
-                    console.log(personName)
-                    console.log(personImage)
+
+                    res.films && res.films.length && setPersonFilms(res.films)
+
                     setApiError(false)
+
                 } catch (er) {
                     setApiError(true)
                 }
@@ -47,7 +49,7 @@ const PersonPage = ({match, setApiError}) => {
 
     return (
         <>
-            <PersonLinkBack />
+            <PersonLinkBack/>
 
             <div className={styles.wrapper}>
                 <span className={styles.person__name}>{personName}</span>
@@ -58,6 +60,7 @@ const PersonPage = ({match, setApiError}) => {
                     />
 
                     {personInfo && <PersonInfo personInfo={personInfo}/>}
+                    {personFilms && <PersonFilms personFilms={personFilms}/>}
                 </div>
             </div>
         </>
