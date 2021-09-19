@@ -7,6 +7,7 @@ import {getCharacterImage} from '@utils/getCharacterData'
 
 import PersonInfo from '@components/PersonPage/PersonInfo'
 import PersonImage from '@components/PersonPage/PersonImage'
+import PersonLinkBack from '@components/PersonPage/PersonLinkBack'
 
 import styles from './PersonPage.module.css'
 
@@ -46,6 +47,8 @@ const PersonPage = ({match, setApiError}) => {
 
     return (
         <>
+            <PersonLinkBack />
+
             <div className={styles.wrapper}>
                 <span className={styles.person__name}>{personName}</span>
                 <div className={styles.container}>
