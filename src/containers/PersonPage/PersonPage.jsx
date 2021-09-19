@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState, Suspense} from 'react'
 import PropTypes from 'prop-types'
 
 import {withApiError} from '@hoc-helpers/withApiError'
@@ -7,10 +7,13 @@ import {getCharacterImage} from '@utils/getCharacterData'
 
 import PersonInfo from '@components/PersonPage/PersonInfo'
 import PersonImage from '@components/PersonPage/PersonImage'
-import PersonFilms from '@components/PersonPage/PersonFilms'
 import PersonLinkBack from '@components/PersonPage/PersonLinkBack'
+import UILoading from '@ui/UILoading/UILoading'
 
 import styles from './PersonPage.module.css'
+
+// import PersonFilms from '@components/PersonPage/PersonFilms'
+const PersonFilms = React.lazy(() => import('@components/PersonPage/PersonFilms'))
 
 const PersonPage = ({match, setApiError}) => {
     const [personInfo, setPersonInfo] = useState(null)
@@ -60,7 +63,11 @@ const PersonPage = ({match, setApiError}) => {
                     />
 
                     {personInfo && <PersonInfo personInfo={personInfo}/>}
-                    {personFilms && <PersonFilms personFilms={personFilms}/>}
+                    {personFilms && (
+                        <Suspense fallback={<UILoading theme="yellow"></UILoading>}>
+                            <PersonFilms personFilms={personFilms}/>
+                        </Suspense>
+                    )}
                 </div>
             </div>
         </>
