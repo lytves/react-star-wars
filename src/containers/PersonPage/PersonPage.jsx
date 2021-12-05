@@ -20,10 +20,12 @@ const PersonPage = ({match, setApiError}) => {
     const [personName, setPersonName] = useState(null)
     const [personImage, setPersonImage] = useState(null)
     const [personFilms, setPersonFilms] = useState(null)
+    const [personId, setPersonId] = useState(null)
 
     useEffect(() => {
             (async () => {
                 const id = match.params.id
+                setPersonId(id)
                 try {
                     const res = await getApiPerson(id)
 
@@ -60,6 +62,7 @@ const PersonPage = ({match, setApiError}) => {
                     <PersonImage
                         personImage={personImage}
                         personName={personName}
+                        personId={personId}
                     />
 
                     {personInfo && <PersonInfo personInfo={personInfo}/>}
