@@ -41,7 +41,7 @@ PersonImage.propTypes = {
     personImage: PropTypes.string,
     personName: PropTypes.string,
     personId: PropTypes.string,
-    personFavorite: PropTypes.string,
+    personFavorite: PropTypes.bool,
     setPersonFavorite: PropTypes.func
 }
 
