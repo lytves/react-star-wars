@@ -2,6 +2,9 @@
 
 Project is based on the youtube video course [React Course / Redux Practice](https://www.youtube.com/watch?v=euYBnQ5MbLM) by Dev Pandaren
 
+### Demo Page
+[React Star Wars](https://lytves.github.io/react-star-wars/) on GitHub Page
+
 ### Init Project: ⭐🔫👸
 ```
 npx create-react-app react-star-wars
