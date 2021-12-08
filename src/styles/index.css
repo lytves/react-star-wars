@@ -27,13 +27,31 @@
             0 0 2px var(--color-white),
             0 0 40px var(--color-blue);
 
+    --box-shadow-white:
+            0 0 2px var(--color-white),
+            0 0 10px var(--color-white);
+    --box-shadow-yellow:
+            0 0 2px var(--color-yellow),
+            0 0 10px var(--color-yellow);
+    --box-shadow-violet:
+            0 0 2px var(--color-violet),
+            0 0 10px var(--color-violet);
+
     --margin-smaller: 5px;
     --margin-small: 10px;
     --margin-medium: 20px;
     --margin-large: 30px;
 
-    --theme-default-header-color: #cccc46;
-    --theme-default-bgimage: url(@static/bg.jpg);
+    /* THEMES */
+    --theme-light-header: #01ffd6;
+    --theme-dark-header: var(--color-red);
+    --theme-general-header: var(--color-yellow);
+    --theme-default-header: var(--theme-general-header);
+
+    --theme-light-bgimage: linear-gradient(to right top, #3f3a3a, #443f3f, #4a4444, #4f4949, #554e4e);
+    --theme-dark-bgimage: linear-gradient(to right top, #463139, #3f2a31, #38242a, #321d22, #2b171b);
+    --theme-general-bgimage: url(@static/bg.jpg);
+    --theme-default-bgimage: var(--theme-general-bgimage);
 
     --transition: 0.4s;
 }
@@ -59,6 +77,6 @@ img {
     line-height: 1.7;
     font-size: var(--font-header-size);
     text-shadow: 0 0 2px var(--color-black);
-    color: var(--theme-default-header-color);
+    color: var(--theme-default-header);
     transition: color var(--transition);
 }
