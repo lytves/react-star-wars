@@ -1,5 +1,5 @@
 :root {
-    --font-family-name: "sans-serif";
+    --font-family-main: "sans-serif";
     --font-bold: 600;
     --font-size-small: 14px;
 
@@ -8,4 +8,9 @@
     --color-white: #fff;
     --color-black: #000;
     --color-grey: #9c9c9c;
+    --color-light-grey: #dfe2df;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
 }

@@ -29,7 +29,7 @@
     border-radius: var(--border-radius-small);
     color: var(--color-white);
     text-align: center;
-    font-family: var(--font-family-name);
+    font-family: var(--font-family-main);
     font-weight: var(--font-bold);
     text-shadow: var(--text-shadow-yellow);
     transition: var(--transition);

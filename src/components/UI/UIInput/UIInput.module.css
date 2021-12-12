@@ -1,0 +1,35 @@
+.input {
+    min-width: 300px;
+    padding: 10px 15px;
+    border: 3px solid var(--color-light-grey);
+    border-radius: var(--border-radius-small);
+    font-size: var(--font-subheader-size);
+    font-family: var(--font-family-main);
+    padding-right: 45px;
+}
+
+.input:focus {
+    border: 3px solid var(--color-blue);
+}
+.wrapper__input {
+    position: relative;
+    display: inline-flex;
+}
+
+.clear {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    object-fit: cover;
+    object-position: center center;
+    cursor: pointer;
+    transition: .5s;
+    opacity: .5;
+}
+
+.clear__disabled {
+    opacity: 0.2;
+}

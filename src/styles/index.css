@@ -1,5 +1,5 @@
 :root {
-    --font-family-name: "Droid Sans";
+    --font-family-main: "Droid Sans";
 
     --font-main-size: 16px;
     --font-subheader-size: 18px;
@@ -56,11 +56,15 @@
     --transition: 0.4s;
 }
 
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--color-dark-gray);
-    font-family: var(--font-family-name);
+    font-family: var(--font-family-main);
     font-size: var(--font-main-size);
     background-image: var(--theme-default-bgimage);
     background-size: cover;

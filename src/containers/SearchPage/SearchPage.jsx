@@ -6,13 +6,13 @@ import {getCharacterId, getCharacterImage} from '@utils/getCharacterData'
 import styles from './SearchPage.module.css'
 import SearchPageInfo from "@components/SearchPageInfo";
 import {debounce} from "lodash";
+import UIInput from "@ui/UIInput";
 
 const SearchPage = ({setApiError}) => {
     const [inputSearchValue, setInputSearchValue] = useState("")
     const [characters, setCharacters] = useState([])
 
-    const handleInputChange = (event) => {
-        const value = event.target.value
+    const handleInputChange = (value) => {
         setInputSearchValue(value)
         debouncedGetResponse(value)
     }
@@ -27,7 +27,6 @@ const SearchPage = ({setApiError}) => {
     );
 
     const getResponse = async (value) => {
-        console.log(value)
         const res = await getApiSeacrh(value)
         if (res) {
             const charactersList = res.results.map(({name, url}) => {
@@ -50,11 +49,12 @@ const SearchPage = ({setApiError}) => {
     return (
         <>
             <h1 className="header__text">Search</h1>
-            <input
+            <UIInput
                 type="text"
                 value={inputSearchValue}
-                onChange={handleInputChange}
                 placeholder="Type character's name"
+                handleInputChange={handleInputChange}
+                classes={styles.input__search}
             />
             <SearchPageInfo characters={characters}/>
         </>
