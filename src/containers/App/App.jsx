@@ -5,7 +5,7 @@ import Header from '@components/Header'
 
 import styles from './App.module.css'
 import cn from 'classnames'
-import HashRouter from "react-router-dom/es/HashRouter";
+import {HashRouter} from "react-router-dom";
 
 const App = () => {
     return (
