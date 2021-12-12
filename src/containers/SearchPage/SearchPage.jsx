@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {getApiCharacters, getApiSeacrh} from "@services/services";
 import {withApiError} from "@hoc-helpers/withApiError";
 import {getCharacterId, getCharacterImage} from '@utils/getCharacterData'
 import styles from './SearchPage.module.css'
 import SearchPageInfo from "@components/SearchPageInfo";
-
+import {debounce} from "lodash";
 
 const SearchPage = ({setApiError}) => {
     const [inputSearchValue, setInputSearchValue] = useState("")
@@ -14,14 +14,20 @@ const SearchPage = ({setApiError}) => {
     const handleInputChange = (event) => {
         const value = event.target.value
         setInputSearchValue(value)
-        getResponse(value)
+        debouncedGetResponse(value)
     }
 
     useEffect(() => {
         getResponse('')
     }, [])
 
+    const debouncedGetResponse = useCallback(
+        debounce(value => getResponse(value), 500),
+        []
+    );
+
     const getResponse = async (value) => {
+        console.log(value)
         const res = await getApiSeacrh(value)
         if (res) {
             const charactersList = res.results.map(({name, url}) => {
