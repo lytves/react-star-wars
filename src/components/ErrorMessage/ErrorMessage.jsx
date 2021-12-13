@@ -1,4 +1,6 @@
 import styles from './ErrorMessage.module.css'
+import UIVideo from "../UI/UIVideo";
+import video from './video/fail.mp4'
 
 const ErrorMessage = () => {
     return (
@@ -10,6 +12,11 @@ const ErrorMessage = () => {
                 I sense much fear in you.<br/>
                 <span className={styles.right}>Yoda</span>
             </p>
+            <UIVideo
+                src={video}
+                clases={styles.video}
+                playbackRate={1}
+            />
         </>
     )
 }

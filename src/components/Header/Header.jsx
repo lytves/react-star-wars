@@ -34,6 +34,7 @@ const Header = () => {
                 <li><NavLink to="/characters/?page=1">Characters</NavLink></li>
                 <li><NavLink to="/404" exact>Not Found</NavLink></li>
                 <li><NavLink to="/search" exact>Search</NavLink></li>
+                <li><NavLink to="/fail" exact>Fail</NavLink></li>
             </ul>
             <Favorites/>
         </div>
