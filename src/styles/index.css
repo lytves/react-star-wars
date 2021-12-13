@@ -20,22 +20,17 @@
     --border-radius-medium: 6px;
     --border-radius-large: 10px;
 
-    --text-shadow-yellow:
-            0 0 2px var(--color-white),
-            0 0 40px var(--color-yellow);
-    --text-shadow-blue:
-            0 0 2px var(--color-white),
-            0 0 40px var(--color-blue);
+    --text-shadow-yellow: 0 0 2px var(--color-white),
+    0 0 40px var(--color-yellow);
+    --text-shadow-blue: 0 0 2px var(--color-white),
+    0 0 40px var(--color-blue);
 
-    --box-shadow-white:
-            0 0 2px var(--color-white),
-            0 0 10px var(--color-white);
-    --box-shadow-yellow:
-            0 0 2px var(--color-yellow),
-            0 0 10px var(--color-yellow);
-    --box-shadow-violet:
-            0 0 2px var(--color-violet),
-            0 0 10px var(--color-violet);
+    --box-shadow-white: 0 0 2px var(--color-white),
+    0 0 10px var(--color-white);
+    --box-shadow-yellow: 0 0 2px var(--color-yellow),
+    0 0 10px var(--color-yellow);
+    --box-shadow-violet: 0 0 2px var(--color-violet),
+    0 0 10px var(--color-violet);
 
     --margin-smaller: 5px;
     --margin-small: 10px;
@@ -83,4 +78,27 @@ img {
     text-shadow: 0 0 2px var(--color-black);
     color: var(--theme-default-header);
     transition: color var(--transition);
+}
+
+/* SCROLLs */
+* {
+    scrollbar-color: rgb(37, 56, 97) rgba(0, 0, 0, .7);
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(37, 56, 97)
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, .7)
+}
+
+::-webkit-scrollbar-corner {
+    background-color: rgba(0, 0, 0, .7)
 }
