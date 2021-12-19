@@ -5,12 +5,11 @@ import Header from '@components/Header'
 
 import styles from './App.module.css'
 import cn from 'classnames'
-import {HashRouter} from "react-router-dom";
 
 const App = () => {
     return (
         <>
-            <HashRouter>
+            <BrowserRouter basename={"/react-star-wars/"}>
                 <div className={styles.wrapper}>
                     <Header/>
 
@@ -25,7 +24,7 @@ const App = () => {
                         ))}
                     </Switch>
                 </div>
-            </HashRouter>
+            </BrowserRouter>
         </>
     )
 }
