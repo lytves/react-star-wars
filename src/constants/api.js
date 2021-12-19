@@ -3,10 +3,10 @@ export const HTTPS = 'https://'
 export const HTTP = 'http://'
 
 // swapi
-export const SWAPI_ROOT = 'swapi.dev/api/'
+export const SWAPI_ROOT = 'www.swapi.tech/api/'
 export const SWAPI_CHARACTERS = 'people'
 export const SWAPI_PARAM_PAGE = '/?page='
-export const SWAPI_PARAM_SEARCH = '/?search='
+export const SWAPI_PARAM_SEARCH = '/?name='
 
 export const API_CHARACTERS = HTTPS + SWAPI_ROOT + SWAPI_CHARACTERS + SWAPI_PARAM_PAGE
 export const API_PERSON = HTTPS + SWAPI_ROOT + SWAPI_CHARACTERS

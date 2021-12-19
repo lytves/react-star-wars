@@ -22,14 +22,28 @@ const SearchPage = ({setApiError}) => {
     }, [])
 
     const debouncedGetResponse = useCallback(
-        debounce(value => getResponse(value), 500),
+        debounce(value => getResponse(value), 400),
         []
     );
 
     const getResponse = async (value) => {
         const res = await getApiSeacrh(value)
-        if (res) {
-            const charactersList = res.results.map(({name, url}) => {
+        let reultsToParse
+        if (res?.results) {
+            reultsToParse = res?.results
+
+        } else if (res?.result) {
+            reultsToParse = res?.result.map(person => {
+                return {
+                    name: person.properties.name,
+                    url: person.properties.url
+            }
+            })
+        } else {
+            setApiError(true)
+        }
+        if (reultsToParse) {
+            const charactersList = reultsToParse.map(({name, url}) => {
                     const id = getCharacterId(url)
                     const image = getCharacterImage(id)
                     return {
@@ -41,8 +55,6 @@ const SearchPage = ({setApiError}) => {
             )
             setCharacters(charactersList)
             setApiError(false)
-        } else {
-            setApiError(true)
         }
     }
 

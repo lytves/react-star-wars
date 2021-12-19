@@ -32,8 +32,8 @@ const PersonPage = ({match, setApiError}) => {
                 Boolean(storeData[id]) && setPersonFavorite(true)
 
                 try {
-                    const res = await getApiPerson(id)
-
+                    const response = await getApiPerson(id)
+                    const res = response.result.properties
                     setPersonInfo([
                         {title: 'Height', data: res.height},
                         {title: 'Mass', data: res.mass},

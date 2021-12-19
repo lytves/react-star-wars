@@ -8,10 +8,10 @@ import {changeHttp} from "../services/api";
 const getId = (urlStr, category) => {
 
     const protocol = changeHttp(urlStr)
-
-    return urlStr
+    const replaced = urlStr
         .replace(protocol + SWAPI_ROOT + category, '')
         .replace(/\//g, '')
+    return replaced
 }
 
 export const getCharacterId = (urlStr) => getId(urlStr, SWAPI_CHARACTERS)
