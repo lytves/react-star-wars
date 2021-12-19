@@ -23,6 +23,6 @@ npm start
     + [Redux](https://redux.js.org/)
     + [React Redux](https://react-redux.js.org/)
 * #### Content, API 🌌🔫👑👊
-    + [Swapi](https://swapi.dev)
+    + [Swapi](https://swapi.tech)
     + [Star Wars: A Visual Guide](https://starwars-visualguide.com/#/)
  
